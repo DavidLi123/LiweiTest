@@ -1,0 +1,22 @@
+# set server port
+server:
+  port: 8080  #
+  context-path: / #  localhost:8080/
+spring:
+  datasource: # set database config
+    url: jdbc:mysql://localhost:3306/test
+    username: liwei
+    password: AAA!2222..
+    driver-class-name: com.mysql.jdbc.Driver
+  jpa: # set jpa
+    database: MYSQL # specify ths DBMS
+    show-sql: true # show or not log for each sql query
+    hibernate:
+      ddl-auto: update # Hibernate ddl auto(create, create-drop, update)
+      naming: # naming strategy
+        strategy: org.hibernate.cfg.ImprovedNamingStrategy
+    properties:
+      hibernate: # stripped before adding them to entity manager
+        dialect: org.hibernate.dialect.MySQL5Dialect
+  aop:
+    proxy-target-class: true
